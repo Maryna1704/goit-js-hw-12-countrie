@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  text-transform: none;
+  text-align: center;
+  background-color: lightskyblue;
+}
+
+body::after {
+  content: '';
+  background-image: url('../img/map.png');
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.9;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.title {
+  font-size: 20px;
+  padding: 15px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  filter: drop-shadow(11px 4px 10px gray);
+}
+
+.search {
+  padding: 16px 15px;
+  margin-bottom: 30px;
+  width: 250px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(3px 8px 8px rgba(0, 0, 0, 0.3));
+  border-radius: 4px;
+  font-size: 16px;
+  font-style: normal;
+  outline: transparent;
+}
+
+.search:focus {
+  filter: drop-shadow(0px 4px 4px rgba(175, 7, 7, 0.363));
+  border-radius: 4px;
+}
+
+.country_title {
+  font-size: 34px;
+  margin-bottom: 100px;
+  letter-spacing: 0.05em;
+  filter: drop-shadow(11px 4px 10px gray);
+  text-transform: uppercase;
+}
+
+.main_flag,
+.preview_pic {
+  filter: drop-shadow(0px 3px 3px black);
+  border-radius: 10%;
+}
+
+.country_container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.country_list {
+  text-align: left;
+  font-size: larger;
+  filter: drop-shadow(0px 9px 9px gray);
+}
+
+.lang {
+  list-style: disc;
+  margin-left: 30px;
+}
+
+.preview_list {
+  display: flex;
+  width: 1200px;
+  margin: auto;
+}
+
+.preview_list li {
+  list-style: none;
+  list-style-type: none;
+}
+
+.mini_flag {
+  align-items: center;
+  padding: 50px;
+}
+
+.preview_title {
+  font-size: 20px;
+  font-weight: 100;
+  letter-spacing: 0.03em;
+  filter: drop-shadow(1px 4px 9px gray);
+}
