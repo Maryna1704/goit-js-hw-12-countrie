@@ -22,6 +22,26 @@ const searchInput = e => {
     .catch(noticeInfo);
 };
 
+const onInputChange = (e) => {
+    let name = e.target.value.trim();
+    if (name.length === 0) return;
+
+    fetchCountries(name)
+        .then(res => {
+            root.innerHTML = '';
+
+            if (res.length > 10) {
+                Swal.fire(`You have - ${res.length} matches. Narrow your search up to 10 !`)
+                return
+            }
+            if (res.length > 1) {
+                tableComponent(res, root);
+            }
+            if (res.length === 1) {
+                mainCard({ ...res[0] }, root);
+            }
+        })
+}
 const dataShow = countries => {
     if (countries.length > 10) {
         error({
@@ -29,7 +49,7 @@ const dataShow = countries => {
             delay: 5000,
         });
     };
-    if (countries.length > 1 && countries.length < 10) {
+    if (countries.length >= 2 && countries.length <= 10) {
         refs.countriesMrkp.innerHTML = previewCountryTpl(countries);
     };
     if (countries.length === 1) {
