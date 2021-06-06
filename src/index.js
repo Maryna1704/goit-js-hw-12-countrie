@@ -11,7 +11,7 @@ import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
 
 const searchInput = e => {
-    const searchQuery = e.target.value;
+    const searchQuery = e.target.value.trim();
     refs.countriesMrkp.innerHTML = '';
 
     if (searchQuery.length < 1)
